@@ -15,3 +15,4 @@ _This API stores data for national parks name and the state where they are locat
 | Request | Path | Description | Request URL | Response Header | Response Body Example | Error Header | Error Response Body |
 | ------- | ---- | ----------- | ----------- |---------------- | --------------------- | ------------ | ------------------- |
 | GET | /parks | return all parks in the API | http://localhost:3000/parks | 200: OK | { "id":1, "name": "Zion National Park", "state":"Utah"}| - | - |
+| GET | /parks/:id | return a national park by ID | http://localhost:3000/parks/10 | 200: OK | { "id":10, "name": "Yosemite National Park", "state":"California"}| 404: not_found | { "message": "couldn't find park with 'id' = 10"}
