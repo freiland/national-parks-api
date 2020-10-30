@@ -17,6 +17,6 @@ _This API stores data for national parks name and the state where they are locat
 | GET | /parks | return all parks in the API | http://localhost:3000/parks | 200: OK | { "id":1, "name": "Zion National Park", "state":"Utah"}| - | - |
 | GET | /parks/:id | return a national park by ID | http://localhost:3000/parks/10 | 200: OK | { "id":10, "name": "Yosemite National Park", "state":"California"}| 404: not_found | { "message": "couldn't find park with 'id' = 10"}
 | POST | /parks{name, state} | post a park to the API | http://localhost:3000/parks?name="Grand Canyon"&state="Arizona" | 201: created | {"id" = 11, "name" = "Grand Canyon", "state" = "Arizona" } | 422: Unprocessable Entity | { "message": "Validation failed: Name can't be blank, State can't be blank } |
-| PUT | /parks/{park_id}{name, state}  | Edit a specific national parl | http://localhost:3000/parks/15?name=Grand Canyon | 200: OK | {
-    "message": "Park details have been updated successfully."
-} | - | - |
+| PUT | /parks/{park_id}{name, state}  | Edit a specific national parl | http://localhost:3000/parks/15?name=Grand Canyon | 200: OK | { "message" : "park details have been updated sucessfully" } | - | - |
+| DELETE | /parks/{park_id} | Delete a specific park | http://localhost:3000/parks/1000 | 200: OK | { "message": "delete sucsessful" } | 404: Not found | { "message": "Couldn't find park with 'id'=1000" } |
+    
