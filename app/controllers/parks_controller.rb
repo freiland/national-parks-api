@@ -16,6 +16,10 @@ class ParksController < ApplicationController
     json_response(@park, :created)
   end
 
+  def random
+    @park = Park.all.sample
+    json_response(@park)
+
   def update
     @park = Park.find(params[:id])
     if @park.update!(park_params)
