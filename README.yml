@@ -1,0 +1,7 @@
+name: National Park API
+
+specifications: 
+  -GET '/parks'
+  -PUT '/parks'
+  -PATCH '/parks'
+  -DESTROY '/parks'
