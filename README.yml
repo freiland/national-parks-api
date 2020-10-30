@@ -1,4 +1,8 @@
-name: National Park API
+swagger: "2.0"
+info:
+  description: "This API contains information about National Parks in the US"
+  version: "1.0.0"
+  title: "National Parks API"
 
 paths:
   /parks:
