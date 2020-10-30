@@ -4,7 +4,7 @@ describe "edit a park route", :type => :request do
 
   before do
     post '/parks', params: { :id => 1, :name => 'Arches National Park', :state => 'Utah' }
-    patch '/parks/1', params: { :name => 'Grand Canyon', :state => 'Arizona' }
+    patch '/parks/1', params: { :id => params[:id],:name => 'Grand Canyon', :state => 'Arizona' }
   end
 
   it 'returns the state' do
