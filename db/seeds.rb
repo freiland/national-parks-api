@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Park.destroy_all
+Park.create!(name: "Zion National Park", state: "Utah")
+Park.create!(name: "Yosemite National Park", state: "California")
+Park.create!(name: "Crater Lake", state: "Oregon")
+Park.create!(name: "Grand Canyon National Park", state: "Arizona")
