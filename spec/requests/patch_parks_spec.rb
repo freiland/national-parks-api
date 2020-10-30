@@ -1,11 +1,17 @@
 require 'rails_helper'
 
-describe "edit a park route", :type => :request do
 
-  before do
-    post '/parks', params: { :id => 1, :name => 'Arches National Park', :state => 'Utah' }
-    patch '/parks/1', params: { :id => params[:id],:name => 'Grand Canyon', :state => 'Arizona' }
+
+describe "get all parks route", :type => :request do
+  let!(:parks) { FactoryBot.create_list(:park, 1)}
+
+  before do 
+    patch '/parks/:id', params { :name => "Grand Canyon", :state => "Arizona" }
   end
+
+  # it 'returns the id' do
+  #   expect(JSON.parse(response.body)['id']).to eq(58)
+  # end
 
   it 'returns the state' do
     expect(JSON.parse(response.body)['state']).to eq('Arizona')
