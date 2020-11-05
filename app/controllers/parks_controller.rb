@@ -2,7 +2,12 @@ class ParksController < ApplicationController
 
   def index 
     name = params[:name]
-    @parks = Park.search(name).order(:name).page(params[:page])
+    @parks = Park.search(name)
+    json_response(@parks)
+  end
+
+  def paginate
+    @parks = Park.paginate(page:params[:page], per_page: 5)
     json_response(@parks)
   end
 
