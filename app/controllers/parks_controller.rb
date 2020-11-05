@@ -2,7 +2,7 @@ class ParksController < ApplicationController
 
   def index 
     name = params[:name]
-    @parks = Park.search(name)
+    @parks = Park.search(name).order(:name).page(params[:page])
     json_response(@parks)
   end
 
