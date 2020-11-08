@@ -44,6 +44,16 @@ _This API stores data for national parks name and the state where they are locat
 * Run `rspec` in your command line to run test specifications. 
 * Running the server: Run `rails s` in the terminal. This will start a server, which you can access by entering `localhost:3000` in your browser.
 
+## Further Exploration
+
+This app uses the gem 'will_paginate' to paginate results from an API call. Instead of all results matching the call being displayed at once to user, pagination displays a specified number of results. For this exercise, I have the pagination returning 5 results.
+
+To view the paginated results navigate to localhost:3000/paginate.
+
+
+
+
+
 ## Technologies Used
 
 * Ruby
