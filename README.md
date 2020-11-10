@@ -20,6 +20,8 @@ _This API stores data for national parks name and the state where they are locat
 | PUT | /parks/{park_id}{name, state}  | Edit a specific national parl | http://localhost:3000/parks/15?name=Grand Canyon | 200: OK | { "message" : "park details have been updated sucessfully" } | - | - |
 | DELETE | /parks/{park_id} | Delete a specific park | http://localhost:3000/parks/1000 | 200: OK | { "message": "delete sucsessful" } | 404: Not found | { "message": "Couldn't find park with 'id'=1000" } |
 | GET | /park/?{name} | return a park matching a search parameter | http://localhost:3000/parks/?name=Yosemite | 200: OK | { "id": 6, "name": "Yosemite National Park", "state":"California"} | - | - |
+| GET | /random_park/random | return a random park from the API | http://localhost:3000/random_park/random | 200: OK | { "id": 6, "name": "Yosemite National Park", "state":"California"} | - | - |
+| GET | /paginate?page={page_number} | return a page of five park entries from the API | http://localhost:3000/paginate?page=4 | 200: OK | {"id":14,"name":"Zion National Park","state":"Utah"},{"id":15,"name":"Yosemite National Park","state":"California"},{"id":16,"name":"Crater Lake","state":"Oregon"},{"id":17,"name":"Grand Canyon National Park","state":"Arizona"},{"id":18,"name":"Glacier National Park","state":"Montana"} | - | - |
 
 ## Setup/Installation Requirements
 
@@ -48,7 +50,7 @@ _This API stores data for national parks name and the state where they are locat
 
 This app uses the gem 'will_paginate' to paginate results from an API call. Instead of all results matching the call being displayed at once to user, pagination displays a specified number of results. For this exercise, I have the pagination returning 5 results.
 
-To view the paginated results navigate to localhost:3000/paginate.
+To view the paginated results navigate to localhost:3000/paginate. To navigate to the next page of paginated results go to localhost:3000/paginate?page=2 or localhost:3000/paginate?page=3.
 
 
 
